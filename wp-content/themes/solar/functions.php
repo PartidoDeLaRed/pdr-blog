@@ -12,12 +12,13 @@
  * @since solar 1.0
  */
 
+require_once('inc/wp-updates-theme.php');
+new WPUpdatesThemeUpdater( 'http://wp-updates.com/api/1/theme', 195, basename(get_template_directory()) );
+
 add_action('admin_head', 'load_theme_scripts');
 
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
-
-include('inc/vendor/UCF-Theme-Updater/updater.php');
 
 
 if ( ! function_exists( 'solar_setup' ) ):

@@ -17,38 +17,16 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-if (getenv("VCAP_SERVICES")) {
-
-	$services_json = json_decode(getenv("VCAP_SERVICES"),true);
-	$mysql_config = $services_json["mysql-5.1"][0]["credentials"];
-	$username = $mysql_config["username"];
-	$password = $mysql_config["password"];
-	$hostname = $mysql_config["hostname"];
-	$port = $mysql_config["port"];
-	$db = $mysql_config["name"];
-	$link = mysql_connect("$hostname:$port", $username, $password);
-	$db_selected = mysql_select_db($db, $link);
-
-
+if (isset($_SERVER["DATABASE_URL"])) {
+ $db = parse_url($_SERVER["DATABASE_URL"]);
+ define("DB_NAME", trim($db["path"],"/"));
+ define("DB_USER", $db["user"]);
+ define("DB_PASSWORD", $db["pass"]);
+ define("DB_HOST", $db["host"]);
 }
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', $db);
-
-/** MySQL database username */
-define('DB_USER', $username);
-
-/** MySQL database password */
-define('DB_PASSWORD', $password);
-
-/** MySQL hostname */
-define('DB_HOST', $hostname);
-
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+else {
+ die("Your heroku DATABASE_URL does not appear to be correctly specified.");
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.

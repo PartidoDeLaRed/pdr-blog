@@ -208,6 +208,7 @@ html
 body 
 	background: #f9f9f9;
 
+
 .wrap
 	border-left: 1px solid #f1f1f1;  background: white; min-height: 700px; border-right: 1px solid #f1f1f1; width: 500px; padding: 20px 50px 0 50px; margin: auto; 
 	a{text-decoration: none; color: #000;}
@@ -364,7 +365,7 @@ body
 	-webkit-transform: translate3d(0, 0, 0);
 }
 
-.left-drawer, .right-drawer {
+.right-drawer
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -380,18 +381,12 @@ body
 	-webkit-transition-timing-function: linear, linear;
 	transition-timing-function: linear, linear;
 	-webkit-overflow-scrolling: touch;
-}
-.left-drawer {
-	z-index: 0;
-}
-.right-drawer
+
 	left: auto;
 	right: 0;
 	z-index: 1;
 	.widget-area 
 		padding: 20px;
-		padding-right: 30px;
-		padding-top: 30px;
 		color: #ccc;
 		font-size: 12px;
 

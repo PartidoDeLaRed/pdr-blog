@@ -747,7 +747,6 @@ body {
   z-index: 3;
   -webkit-transform: translate3d(0, 0, 0);
 }
-.left-drawer,
 .right-drawer {
   position: fixed;
   top: 0;
@@ -764,19 +763,12 @@ body {
   -webkit-transition-timing-function: linear, linear;
   transition-timing-function: linear, linear;
   -webkit-overflow-scrolling: touch;
-}
-.left-drawer {
-  z-index: 0;
-}
-.right-drawer {
   left: auto;
   right: 0;
   z-index: 1;
 }
 .right-drawer .widget-area {
   padding: 20px;
-  padding-right: 30px;
-  padding-top: 30px;
   color: #ccc;
   font-size: 12px;
 }

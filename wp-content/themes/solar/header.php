@@ -46,7 +46,7 @@
 { color: <?php echo $color ?> !important}
 
 .wrap nav.pagination a:hover,
-#respond #submit
+#respond #submit, article.post ::selection
 {background-color: <?php echo $color ?>;}
 
 <?php if($options['color']): ?>

@@ -21,4 +21,7 @@
 		$(this).toggleClass("opened");
 	});
 	
+	$('.post a  img').parent().addClass("view"); 
+
+
 })( jQuery );

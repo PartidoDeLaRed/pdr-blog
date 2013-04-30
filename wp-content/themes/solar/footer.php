@@ -9,9 +9,10 @@
  */
 ?>
 
-			</div>
 	    </div>
+	    <!-- .wrap -->
 	</div>
+	<!-- .container-fluid -->
 </div>
 <!-- .tall -->
 <?php wp_footer(); ?>

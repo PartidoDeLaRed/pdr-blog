@@ -722,19 +722,11 @@ body {
 .copyright span {
   display: block;
 }
+/* View.js */
+.viewer .next {
+  display: none !important;
+}
 /* Snap.js */
-.relative {
-  position: relative;
-}
-.absolute {
-  position: absolute;
-}
-.left {
-  float: left;
-}
-.right {
-  float: right;
-}
 .fix-container {
   position: fixed;
   bottom: 0;

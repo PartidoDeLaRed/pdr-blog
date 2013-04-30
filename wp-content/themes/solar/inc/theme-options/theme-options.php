@@ -49,26 +49,6 @@ function theme_options_do_page() {
 					</tr>
 
 					<tr>
-						<th><?php _e( 'Twitter Username', 'wordpress-solar' ); ?></th>
-						<td>
-							@<input class="regular-text" type="text" name="solar_options[twitter_username]" value="<?php esc_attr_e( $options['twitter_username'] ); ?>" />
-						</td>
-					</tr>
-					<tr>
-						<th><?php _e( 'Github Username', 'wordpress-solar' ); ?></th>
-						<td>
-							<input class="regular-text" type="text" name="solar_options[github_username]" value="<?php esc_attr_e( $options['github_username'] ); ?>" />
-						</td>
-					</tr>
-
-					<tr>
-						<th><?php _e( 'Contact Email', 'wordpress-solar' ); ?></th>
-						<td>
-							<input class="regular-text" type="text" name="solar_options[contact_email]" value="<?php esc_attr_e( $options['contact_email'] ); ?>" />
-						</td>
-					</tr>
-
-					<tr>
 						<th><?php _e( 'Biography', 'wordpress-solar' ); ?></th>
 						<td>
 		<textarea id="solar_options[biography]" class="small-text" cols="50" rows="10" style="height: 100px;" name="solar_options[biography]"><?php echo esc_textarea( $options['biography'] ); ?></textarea>

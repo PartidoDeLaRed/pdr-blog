@@ -39,7 +39,7 @@
 .wrap .content-blog article blockquote, 
 .wrap .content-blog article .entry-content a:hover,
 .wrap .content-blog article a:hover,
-.wrap nav a:hover
+.wrap nav a:hover, nav li.current_page_item a
 {border-color: <?php echo $color ?> !important;}
 
 .wrap .content-blog article h2 a:hover
@@ -60,43 +60,42 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="wrap clearfix">
-	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<nav role="navigation" class="nav-blog">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
-			 <?php 
-  $pages = get_pages(array('parent' => 0, 'exclude' => '84,88,80')); 
-  foreach ( $pages as $page ): ?>
-	<a href="<?php echo get_page_link( $page->ID ) ?>" title="<?php echo $page->post_title ?>"><?php echo $page->post_title ?></a>
-<?php endforeach; ?>
-			<?php if ($options['github_username']): ?>
-				<a target="_blank" class="github" href="http://github.com/<?php echo $options['github_username'] ?>"><i></i>Github</a></li>
-			<?php endif ?>
 
-			<?php if ($options['twitter_username']): ?>
-				<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>" title="">@<?php echo $options['twitter_username'] ?></a>
-			<?php endif ?>
+<div class="relative tall">
+	<div class="drawers absolute">
+		<div class="right-drawer absolute">
+	        <?php get_sidebar() ?>
+	    </div>
+	</div>
 
-			<?php if ($options['contact_email']): ?>
-				<a target="_blank"  class="contact-us" href="mailto:<?php echo $options['contact_email'] ?>"><i></i>Say hello</a>
-			<?php endif ?>
-			
-		</nav>
-		<hgroup>
-			<h1 id="logo" class="logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><?php echo bloginfo('title') ?></a>
-			</h1>
+	<div id="content-fluid">
+        <a href="#" id="open-left"></a>
 
-			<div class="info">
-				<h2><?php echo bloginfo('title') ?></h2>
-				<?php if ($options['theme_username']): ?>
-					<h4><?php echo $options['theme_username'] ?></h4>
-				<?php endif ?>
-				<p class="bio"><?php echo $options['biography'] ?></p>
-			</div>
-		</hgroup>
-		
+        <div class="fix-container">
+        	
+			<div class="wrap">
+				<?php do_action( 'before' ); ?>
+				<header id="masthead" class="site-header" role="banner">
+					<nav id="site-navigation" class="navigation-main" role="navigation">
+						<h1 class="menu-toggle"><?php _e( 'Menu', 'solar' ); ?></h1>
+						<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'solar' ); ?>"><?php _e( 'Skip to content', 'solar' ); ?></a></div>
 
-	</header><!-- #masthead .site-header -->
+						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					</nav><!-- #site-navigation -->
+					<hgroup>
+						<h1 id="logo" class="logo">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><?php echo bloginfo('title') ?></a>
+						</h1>
+
+						<div class="info">
+							<h2><?php echo bloginfo('title') ?></h2>
+							<?php if ($options['theme_username']): ?>
+								<h4><?php echo $options['theme_username'] ?></h4>
+							<?php endif ?>
+							<p class="bio"><?php echo $options['biography'] ?></p>
+						</div>
+					</hgroup>
+						
+
+				</header><!-- #masthead .site-header -->
 

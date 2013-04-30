@@ -5,7 +5,9 @@
 	<?php if (!is_page()): ?>
 	<time class="entry-meta">
 		<i class="ball"></i>
-		<?php echo get_the_date('M dS \'y') ?>
+		<div class="posted-on">
+			<?php solar_posted_on() ?>
+		</div>
 	</time><!-- .entry-meta -->
 	<?php endif ?>
 

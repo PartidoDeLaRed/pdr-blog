@@ -373,8 +373,6 @@ td {
 html {
   -webkit-font-smoothing: antialiased;
   font-family: "proxima-nova", "Helvetica Neue", "Arial";
-}
-body {
   background: #f9f9f9;
 }
 .wrap {
@@ -525,29 +523,44 @@ body {
 .wrap .content-blog article.page h2.link a.anchor:hover img {
   opacity: 1;
 }
-.wrap .content-blog article.post time,
-.wrap .content-blog article.page time {
+.wrap .content-blog article.post .entry-meta,
+.wrap .content-blog article.page .entry-meta {
   position: absolute;
+  text-align: right;
   font-family: "droid-sans-mono", Menlo, Monaco, 'Lucida Console', monospace;
   font-size: 12px;
   color: #666;
-  top: 10px;
+  top: 0;
   text-transform: uppercase;
   font-weight: 400;
   width: 140px;
   font-size: 10px;
+  margin-top: 10px;
   left: -188px;
-  text-align: right;
 }
-.wrap .content-blog article.post time i,
-.wrap .content-blog article.page time i {
-  float: right;
+.wrap .content-blog article.post .entry-meta i,
+.wrap .content-blog article.page .entry-meta i {
   background: #eee;
   border-radius: 100px;
   height: 5px;
+  right: 0;
   width: 5px;
-  margin-top: 4px;
-  margin-left: 20px;
+  position: absolute;
+}
+.wrap .content-blog article.post .entry-meta .posted-on,
+.wrap .content-blog article.page .entry-meta .posted-on {
+  text-align: right;
+  width: 120px;
+  overflow: hidden;
+}
+.wrap .content-blog article.post .entry-meta .posted-on time,
+.wrap .content-blog article.page .entry-meta .posted-on time {
+  display: block;
+  margin-bottom: 2px;
+}
+.wrap .content-blog article.post .entry-meta .posted-on span.byline,
+.wrap .content-blog article.page .entry-meta .posted-on span.byline {
+  display: block;
 }
 .wrap .content-blog article.post p,
 .wrap .content-blog article.page p,
@@ -660,10 +673,18 @@ body {
 .wrap .content-blog article.page code,
 .wrap .content-blog article.post pre,
 .wrap .content-blog article.page pre {
+  background-color: #f1f1f1;
+}
+.wrap .content-blog article.post code,
+.wrap .content-blog article.page code {
+  padding: 4px;
+  font-size: 12px;
+}
+.wrap .content-blog article.post pre,
+.wrap .content-blog article.page pre {
   border: none;
   display: block;
   border: 1px solid #d2d2d2;
-  background-color: #f8f8f8;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-left: -50px;
@@ -750,7 +771,6 @@ body {
 .right-drawer {
   position: fixed;
   top: 0;
-  left: 0;
   width: 265px;
   bottom: 0;
   background: #333;
@@ -813,10 +833,6 @@ body {
   outline: none;
   color: White;
   box-shadow: none;
-}
-.snapjs-right .left-drawer {
-  left: auto;
-  right: 0;
 }
 #open-left {
   background: #333 url("images/open.png") center center no-repeat;
@@ -1075,6 +1091,9 @@ ol.commentlist li.comment.byuser #respond .form-submit {
   .wrap header.site-header h1#logo {
     margin-bottom: 20px;
   }
+  .wrap header.site-header hgroup {
+    margin-top: 20px;
+  }
   .wrap header.site-header nav a {
     margin-right: 14px;
   }
@@ -1082,13 +1101,22 @@ ol.commentlist li.comment.byuser #respond .form-submit {
   .wrap .content-blog article.page h2 {
     margin-bottom: 10px;
   }
-  .wrap .content-blog article.post time,
-  .wrap .content-blog article.page time {
+  .wrap .content-blog article.post .entry-meta,
+  .wrap .content-blog article.page .entry-meta {
     position: static;
   }
-  .wrap .content-blog article.post time i,
-  .wrap .content-blog article.page time i {
+  .wrap .content-blog article.post .entry-meta i,
+  .wrap .content-blog article.page .entry-meta i {
     display: none;
+  }
+  .wrap .content-blog article.post .entry-meta .posted-on,
+  .wrap .content-blog article.page .entry-meta .posted-on {
+    width: auto;
+    text-align: left;
+  }
+  .wrap .content-blog article.post .entry-meta .posted-on span.byline,
+  .wrap .content-blog article.page .entry-meta .posted-on span.byline {
+    display: inline-block;
   }
   .wrap .content-blog article.post pre,
   .wrap .content-blog article.page pre,

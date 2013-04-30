@@ -203,9 +203,8 @@ td { vertical-align: top; }
 
 
 html 
-	-webkit-font-smoothing: antialiased; font-family: "proxima-nova", "Helvetica Neue", "Arial";
-
-body 
+	-webkit-font-smoothing: antialiased; 
+	font-family: "proxima-nova", "Helvetica Neue", "Arial";
 	background: #f9f9f9;
 
 
@@ -264,17 +263,24 @@ body
 						span{border-color: #ccc;}
 					&.anchor:hover img{opacity: 1;}
 
-			time
-				position: absolute; font-family: "droid-sans-mono", Menlo, Monaco, 'Lucida Console', monospace; font-size: 12px; color: #666; top: 10px; text-transform: uppercase; font-weight: 400; width: 140px; font-size: 10px; left: -188px; text-align: right;
+			.entry-meta
+				position: absolute; text-align: right; font-family: "droid-sans-mono", Menlo, Monaco, 'Lucida Console', monospace; font-size: 12px; color: #666; top: 0; text-transform: uppercase; font-weight: 400; width: 140px; font-size: 10px; margin-top: 10px; left: -188px; 
 				i
-					float: right;
 					background: #eee;
 					border-radius: 100px;
 					height: 5px;
+					right: 0;
 					width: 5px;
-					margin-top: 4px;
-					margin-left: 20px;
-
+					position: absolute;
+				.posted-on
+					text-align: right;
+					width:120px;
+					overflow: hidden;
+					time 
+						display: block; 
+						margin-bottom: 2px;
+					span.byline 
+						display: block;
 			 
 			p, ul, blockquote, ol, .prettify{margin: 20px 0;}
 			p, ul li{line-height: 25px; font-size: 15px; color: #4d4d4d}
@@ -302,11 +308,17 @@ body
 				width: 70%;
 				margin: auto;
 
-			code, pre
+			code, pre 
+				background-color: #f1f1f1;
+				
+			code 
+				padding: 4px;
+				font-size: 12px;
+
+			pre
 				border: none;
 				display: block;
 				border: 1px solid #d2d2d2;
-				background-color: #f8f8f8;
 				padding-top: 10px;
 				padding-bottom: 10px;
 				margin-left: -50px;
@@ -368,7 +380,6 @@ body
 .right-drawer
 	position: fixed;
 	top: 0;
-	left: 0;
 	width: 265px;
 	bottom: 0;
 	background: #333;
@@ -381,7 +392,6 @@ body
 	-webkit-transition-timing-function: linear, linear;
 	transition-timing-function: linear, linear;
 	-webkit-overflow-scrolling: touch;
-
 	left: auto;
 	right: 0;
 	z-index: 1;
@@ -430,10 +440,6 @@ body
 					box-shadow: none;
 
 
-.snapjs-right .left-drawer {
-	left: auto;
-	right: 0;
-}
 #open-left {
 	background: #333 url(images/open.png) center center no-repeat;
 	display: block;
@@ -539,13 +545,23 @@ ol.commentlist li.comment.byuser #respond .form-submit{margin-left: 0}
 		width: 92%; padding: 2% 4%;	margin: 0; border: 0;
 		header.site-header
 			h1#logo{margin-bottom: 20px;}
-			nav a{margin-right: 14px;}
+			hgroup
+				margin-top: 20px;
+			nav 
+
+				a{margin-right: 14px;}
+
 		.content-blog
 			article.post, article.page
 				h2{margin-bottom: 10px;}
-				time
+				.entry-meta
 					position: static;
 					i {display: none;}
+					.posted-on
+						width: auto;
+						text-align: left;
+						span.byline
+							display: inline-block;
 				pre,code
 					width: 96%; padding: 2%; margin: 0;
 	.copyright

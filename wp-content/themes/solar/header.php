@@ -7,12 +7,14 @@
  * @package solar
  * @since solar 1.0
  */
-?><!DOCTYPE html>
+?>
+<!-- Theme created by Themes Kult (themeskult.com) -->
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-<title><?php wp_title( 'by', true, 'right' ); bloginfo( 'name' ); ?></title>
+<title><?php wp_title( '&mdash;', true, 'right' ); bloginfo( 'name' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" >
@@ -46,7 +48,7 @@
 { color: <?php echo $color ?> !important}
 
 .wrap nav.pagination a:hover,
-#respond #submit, article.post ::selection
+#respond #submit, ::selection
 {background-color: <?php echo $color ?>;}
 
 <?php if($options['color']): ?>

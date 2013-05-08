@@ -4,24 +4,18 @@
 
 	prettyPrint();
 
-	var jquery_element = $('#content-fluid');
+	// $('#open-left').click(function(){
 
-	var snapper = new Snap({
-	    element: document.getElementById('content-fluid'),
-	    disable: 'left'
-	});
-
-	$('#open-left').click(function(){
-
-		if ($(this).hasClass('opened')) {
-			snapper.close('right');
-		}else{
-			snapper.open('right');
-		};
-		$(this).toggleClass("opened");
-	});
+	// 	if ($(this).hasClass('opened')) {
+	// 		snapper.close('right');
+	// 	}else{
+	// 		snapper.open('right');
+	// 	};
+	// 	$(this).toggleClass("opened");
+	// });
 	
-	$('.post a  img').parent().addClass("view"); 
+	
+    $(".second").pageslide({ direction: "left", modal: true });
 
 
 })( jQuery );

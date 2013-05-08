@@ -8,12 +8,12 @@
  * @since solar 1.0
  */
 ?>
-	    </div>
-	    <!-- .wrap -->
-	</div>
-	<!-- .container-fluid -->
 </div>
-<!-- .tall -->
+<!-- .wrap -->
+
+
+<?php get_sidebar() ?>
+
 <?php wp_footer(); ?>
 <a href="http://themeskult.com" class="copyright">Made by <span>Themes Kult</span></a>
 </body>

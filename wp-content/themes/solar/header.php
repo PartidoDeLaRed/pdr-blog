@@ -63,41 +63,35 @@
 
 <body <?php body_class(); ?>>
 
-<div class="relative tall">
-	<div class="drawers absolute">
-		<div class="right-drawer absolute">
-	        <?php get_sidebar() ?>
-	    </div>
-	</div>
 
-	<div id="content-fluid">
-        <a href="#" id="open-left"></a>
+	<a href="#modal" class="second open-left">Link text</a>
 
-        <div class="fix-container">
-        	
-			<div class="wrap">
-				<?php do_action( 'before' ); ?>
-				<header id="masthead" class="site-header" role="banner">
-					<nav id="site-navigation" class="navigation-main" role="navigation">
-						<h1 class="menu-toggle"><?php _e( 'Menu', 'solar' ); ?></h1>
-						<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'solar' ); ?>"><?php _e( 'Skip to content', 'solar' ); ?></a></div>
+	<div class="wrap">
+		
 
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-					</nav><!-- #site-navigation -->
-					<hgroup>
-						<h1 id="logo" class="logo">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><?php echo bloginfo('title') ?></a>
-						</h1>
+	<?php do_action( 'before' ); ?>
+	<header id="masthead" class="site-header" role="banner">
+		<nav id="site-navigation" class="navigation-main" role="navigation">
+			<h1 class="menu-toggle"><?php _e( 'Menu', 'solar' ); ?></h1>
+			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'solar' ); ?>"><?php _e( 'Skip to content', 'solar' ); ?></a></div>
 
-						<div class="info">
-							<h2><?php echo bloginfo('title') ?></h2>
-							<?php if ($options['theme_username']): ?>
-								<h4><?php echo $options['theme_username'] ?></h4>
-							<?php endif ?>
-							<p class="bio"><?php echo $options['biography'] ?></p>
-						</div>
-					</hgroup>
-						
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- #site-navigation -->
+		<hgroup>
+			<h1 id="logo" class="logo">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><?php echo bloginfo('title') ?></a>
+			</h1>
 
-				</header><!-- #masthead .site-header -->
+			<div class="info">
+				<h2><?php echo bloginfo('title') ?></h2>
+				<?php if ($options['theme_username']): ?>
+					<h4><?php echo $options['theme_username'] ?></h4>
+				<?php endif ?>
+				<p class="bio"><?php echo $options['biography'] ?></p>
+			</div>
+		</hgroup>
+			
+
+	</header><!-- #masthead .site-header -->
+
 

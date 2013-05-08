@@ -75,6 +75,8 @@ td { vertical-align: top; }
 .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
 /* End of Boilerplate */
 
+/* General */
+a{ outline: none !important;}
 
 /* Alignment */
 .alignleft {
@@ -204,13 +206,13 @@ td { vertical-align: top; }
 
 html 
 	-webkit-font-smoothing: antialiased; 
-	font-family: "proxima-nova", "Helvetica Neue", "Arial";
+	font-family: "ff-meta-serif-web-pro",serif;
 	background: #f9f9f9;
 
 
 .wrap
 	border-left: 1px solid #f1f1f1;  background: white; min-height: 700px; border-right: 1px solid #f1f1f1; width: 500px; padding: 20px 50px 0 50px; margin: auto; 
-	a{text-decoration: none; color: #000;}
+	a{text-decoration: none;  color: #000;}
 	a:hover{color: #a73715;}
 	nav a, article p a
 		border-bottom: 1px solid #f1f1f1;
@@ -250,7 +252,7 @@ html
 			a:last-child{margin-right: 0;}
 	.content-blog
 		article.post, article.page 
-			position: relative; margin-bottom: 120px; font-family: "ff-meta-serif-web-pro",serif;
+			position: relative; margin-bottom: 120px; 
 			h2
 				margin: 0 0 10px 0;
 				a
@@ -352,124 +354,82 @@ html
 		display: block;
 
 
-
-/* View.js */
-.viewer .next 
-	display: none !important;
-
-/* Snap.js */
-
-.fix-container
-	position: fixed;
-	bottom: 0; top: 0; left: 0; right: 0; 
-	overflow: scroll;
-	z-index: 1000;
-
-#content-fluid {
-	position: fixed;
-	overflow-y: scroll;
-	background: #f1f1f1;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 3;
-	-webkit-transform: translate3d(0, 0, 0);
-}
-
 .right-drawer
+	font-family: "freight-sans-pro",sans-serif;
+	/* These styles MUST be included. Do not change. */
+	display: none;
+	position: absolute;
 	position: fixed;
 	top: 0;
-	width: 265px;
-	bottom: 0;
-	background: #333;
-	color: #eee;
-	overflow: auto;
-	-webkit-transition-property: top, bottom;
-	transition-property: top, bottom;
-	-webkit-transition-duration: .2s, .2s;
-	transition-duration: .2s, .2s;
-	-webkit-transition-timing-function: linear, linear;
-	transition-timing-function: linear, linear;
-	-webkit-overflow-scrolling: touch;
-	left: auto;
-	right: 0;
-	z-index: 1;
-	.widget-area 
-		padding: 20px;
-		color: #ccc;
-		font-size: 12px;
+	height: 100%;
+	z-index: 999999;
 
-		h1.widget-title 
-			color: white;
-			font-size: 18px;
-			margin-bottom: 10px;
+	/* Specify the width of your pageslide here */
+	width: 260px;
+	padding: 0 10px;
 
-		a 
-			color: #a5afb3;
-			font-weight: bold;
-			&:hover 
-				color: white;
+	/* These styles are optional, and describe how the pageslide will look */
+	background-color: #333;
+	color: #FFF;
+	overflow-y: scroll;
 
-		ul 
-			padding: 0;
-			padding-left: 18px;
-			margin: 0;
-			li 
-				list-style:  square;
-				margin-bottom: 10px;
-
-
-		.widget_search
-			label
-				font-weight: bold;
-				margin-bottom: 10px;
-				display: none;
-			.submit 
-				display: none;
-			#s 
-				border: 0;
-				width: 92%;
-				padding: 4%;
-				background-color: #666;
-				color: #1a1d22;
-				font-size: 14px;
-				&:focus 
-					outline: none;
-					color: White;
-					box-shadow: none;
-
-
-#open-left {
+.open-left
 	background: #333 url(images/open.png) center center no-repeat;
 	display: block;
 	width: 44px;
 	height: 44px;
-	position: fixed;
 	top: 20px;
 	right: 20px;
+	position: fixed;
+	right: 20px;
+	text-indent: -10000em;
 	z-index: 10000;
-}
-.left-drawer,.right-drawer{
-	-webkit-transition: width 0.3s ease; 
-	-moz-transition: width 0.3s ease; 
-	-o-transition: width 0.3s ease; 
-	transition: width 0.3s ease; 
-}
-.drawer-inner{
-	-webkit-transition: opacity 0.3s ease; 
-	-moz-transition: opacity 0.3s ease; 
-	-o-transition: opacity 0.3s ease; 
-	transition: opacity 0.3s ease; 
-}
-.snapjs-expand-left .drawer-inner,
-.snapjs-expand-right .drawer-inner{
-	opacity: 0;
-}
-.snapjs-expand-left .left-drawer,
-.snapjs-expand-right .right-drawer{
-	width: 100%;
-}
+
+
+.widget-area 
+	padding: 20px;
+	color: #ccc;
+	font-size: 12px;
+
+	h1.widget-title 
+		color: white;
+		font-size: 18px;
+		margin-bottom: 10px;
+
+	a 
+		color: #a5afb3;
+		font-weight: bold;
+		text-decoration: none;
+		&:hover 
+			color: white;
+
+	ul 
+		padding: 0;
+		padding-left: 18px;
+		margin: 0;
+		li 
+			list-style:  square;
+			margin-bottom: 10px;
+
+
+	.widget_search
+		label
+			font-weight: bold;
+			margin-bottom: 10px;
+			display: none;
+		.submit 
+			display: none;
+		#s 
+			border: 0;
+			width: 92%;
+			padding: 4%;
+			background-color: #666;
+			color: #1a1d22;
+			font-size: 14px;
+			&:focus 
+				outline: none;
+				color: White;
+				box-shadow: none;
 
 
 /* =Comments
